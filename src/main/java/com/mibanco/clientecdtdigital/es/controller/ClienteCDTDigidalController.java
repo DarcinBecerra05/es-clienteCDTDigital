@@ -7,16 +7,20 @@ import com.mibanco.clientecdtdigital.es.services.impl.ClienteCDTDigidalImpl;
 import com.mibanco.clientecdtdigital.es.utils.exception.ApplicationException;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
+import org.eclipse.microprofile.graphql.GraphQLApi;
+import org.eclipse.microprofile.graphql.Mutation;
+import org.eclipse.microprofile.graphql.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@GraphQLApi
 public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
     private static final Logger LOG = LoggerFactory.getLogger(ClienteCDTDigidalController.class);
 
     @Inject
     ClienteCDTDigidalImpl clienteCDTDigitalImpl;
 
-    @Override
+   @Mutation("actualizarCliente")
     public Response actualizarClienteCDTDigital(Integer id, ClienteCDTDigitalTypeResponse clienteCDTDigitalTypeResponse) {
         LOG.info("Inicia el metodo actualizarClienteCdtDigital Controller");
         try {
@@ -30,7 +34,7 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
     }
 
 
-    @Override
+    @Mutation("crearCliente")
     public Response crearClienteCDTDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
         LOG.info("Inicia el metodo crearClienteCdtDigital Controller");
         ClienteCDTDigitalType clienteCDTDigitalTypeResponse = null;
@@ -44,7 +48,7 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
         return Response.status(Response.Status.CREATED).entity(clienteCDTDigitalTypeResponse).build();
     }
 
-    @Override
+    @Mutation("eliminarCliente")
     public Response eliminarClienteCDTDigital(Integer id) {
         LOG.info("Inicia el metodo eliminarClienteCdtDigital Controller");
         try {
@@ -57,7 +61,7 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
         return null;
 
     }
-    @Override
+    @Query("allCliente")
     public Response buscarClienteCDTDigital(Integer id) {
         LOG.info("Inicia el metodo listarClienteCdtDigital Controller");
         try {
