@@ -18,7 +18,8 @@ import java.io.Serializable;
 public class ClienteCDTDigital implements Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-     private Long id;
+     @Column(name = "id")
+     public Integer id;
      @Column(name="tipoTelefonoPrincipal")
      private String tipoTelefonoPrincipal;
      @Column(name="telefonoPrincipal")
