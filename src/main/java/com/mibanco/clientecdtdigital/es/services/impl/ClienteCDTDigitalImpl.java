@@ -10,7 +10,6 @@ import com.mibanco.clientecdtdigital.es.utils.mapper.ClienteCDTDigitalMapper;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
