@@ -55,6 +55,7 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
         }
         LOG.info("Finaliza el metodo eliminarClienteCdtDigital");
         return null;
+        
     }
 
     @Override
