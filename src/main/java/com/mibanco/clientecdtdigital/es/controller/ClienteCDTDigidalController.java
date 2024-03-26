@@ -57,7 +57,6 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
         return null;
         
     }
-
     @Override
     public Response buscarClienteCDTDigital(Integer id) {
         LOG.info("Inicia el metodo listarClienteCdtDigital Controller");
