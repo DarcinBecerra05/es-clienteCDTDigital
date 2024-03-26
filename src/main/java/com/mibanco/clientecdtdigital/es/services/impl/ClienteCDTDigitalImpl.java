@@ -43,18 +43,31 @@ public class ClienteCDTDigitalImpl implements IClienteCDTDigital {
 
     @Transactional
     public ClienteCDTDigitalTypeResponse actualizarClienteCDTDigital(Long id, ClienteCDTDigitalTypeResponse clienteCDTDigitalTypeResponse) {
-        Long clienteID = Long.valueOf(id);
-        ClienteCDTDigital clienteCDTDigital = clienteCDTDigitalDao.findById(clienteID);
-        ClienteCDTDigital clienteActualizar = clienteCDTDigitalMapper.clienteCDTDigitalTypeResponseToEntity(clienteCDTDigitalTypeResponse);
-        clienteCDTDigital.setTipoTelefonoPrincipal(clienteActualizar.getTipoTelefonoPrincipal());
-        clienteCDTDigital.setTelefonoPrincipal(clienteActualizar.getTelefonoPrincipal());
-        clienteCDTDigital.setTipoCorreoElectronico(clienteActualizar.getTipoCorreoElectronico());
+        try {
+            Long clienteID = Long.valueOf(id);
+            ClienteCDTDigital clienteCDTDigital = clienteCDTDigitalDao.findById(clienteID);
+            ClienteCDTDigital clienteActualizar = clienteCDTDigitalMapper.clienteCDTDigitalTypeResponseToEntity(clienteCDTDigitalTypeResponse);
+            clienteCDTDigital.setTipoTelefonoPrincipal(clienteActualizar.getTipoTelefonoPrincipal());
+            clienteCDTDigital.setTelefonoPrincipal(clienteActualizar.getTelefonoPrincipal());
+            clienteCDTDigital.setTipoCorreoElectronico(clienteActualizar.getTipoCorreoElectronico());
+            return clienteCDTDigitalTypeResponse;
+        } catch (ApplicationException e) {
+            LOG.error("Se presento un error en el metodo actualizarClienteCdtDigital Impl" + e.getMessage());
+        }
+        LOG.info("Finaliza el metodo actualizarClienteCdtDigital Impl");
         return clienteCDTDigitalTypeResponse;
     }
-@Transactional
-    public void eliminarClienteCDTDigital(Integer id){
-        Long clienteID = Long.valueOf(id);
-        clienteCDTDigitalDao.deleteById(clienteID);
+
+    @Transactional
+    public void eliminarClienteCDTDigital(Integer id) {
+        try {
+            Long clienteID = Long.valueOf(id);
+            clienteCDTDigitalDao.deleteById(clienteID);
+        } catch (ApplicationException e) {
+            LOG.error("Se presento un error en el metodo eliminarClienteCdtDigital Impl" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage());
+        }
+        LOG.info("Finalizar el metodo eliminarClienteCdtDigital Impl");
+    }
 }
 
-}

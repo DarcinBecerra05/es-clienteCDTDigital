@@ -18,8 +18,14 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi  {
 
     @Override
     public Response actualizarClienteCDTDigital(Integer id, ClienteCDTDigitalTypeResponse clienteCDTDigitalTypeResponse) {
-
-        clienteCDTDigitalImpl.actualizarClienteCDTDigital(Long.valueOf(id), clienteCDTDigitalTypeResponse);
+        LOG.info("Inicia el metodo actualizarClienteCdtDigital Controller");
+        try {
+            clienteCDTDigitalImpl.actualizarClienteCDTDigital(Long.valueOf(id), clienteCDTDigitalTypeResponse);
+        }catch (ApplicationException e) {
+            LOG.error("Se presento un error en el metodo actualizarClienteCdtDigital Controller" + e.getMessage());
+            return Response.status(Response.Status.CREATED).entity(clienteCDTDigitalTypeResponse).build();
+        }
+        LOG.info("Finaliza el metodo actualizarClienteCdtDigital Controller");
         return Response.status(Response.Status.CREATED).entity(clienteCDTDigitalTypeResponse).build();
     }
 
@@ -39,10 +45,14 @@ public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi  {
     }
     @Override
     public Response eliminarClienteCDTDigital(Integer id){
-
-        clienteCDTDigitalImpl.eliminarClienteCDTDigital(id);
-        return Response.status(Response.Status.OK).build();
+        LOG.info("Inicia el metodo eliminarClienteCdtDigital Controller");
+try {
+    clienteCDTDigitalImpl.eliminarClienteCDTDigital(id);
+    return Response.status(Response.Status.OK).build();
+}catch (ApplicationException e){
+    LOG.error("Se presento un error en el metodo eliminarClienteCdtDigital controller"+ e.getMessage());
+}
+       LOG.info("Finaliza el metodo eliminarClienteCdtDigital");
+return null;
     }
-
-
 }
