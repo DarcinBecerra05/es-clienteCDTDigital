@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("ClienteCDTDigitalType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-26T12:05:04.064639400-05:00[America/Bogota]", comments = "Generator version: 7.4.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-26T13:40:07.910799900-05:00[America/Bogota]", comments = "Generator version: 7.4.0")
 public class ClienteCDTDigitalType   {
   private @Valid String tipoTelefonoPrincipal;
   private @Valid String telefonoPrincipal;
@@ -52,8 +52,8 @@ public class ClienteCDTDigitalType   {
   private @Valid String tipoDireccionPersonal;
   private @Valid String categoriaDireccionPersonal;
   private @Valid String envioCorrespondencia;
-  private @Valid Float ingresosMensuales = null;
-  private @Valid Float patrimonio = null;
+  private @Valid Integer ingresosMensuales;
+  private @Valid Integer patrimonio;
   private @Valid String declaracionOrigenFondos;
   private @Valid Boolean reconocimientoPublicoExtranjero;
   private @Valid Boolean reconocimientoPublicoNacional;
@@ -85,7 +85,7 @@ public class ClienteCDTDigitalType   {
   private @Valid Boolean autorizacionEnvioCelularCorreo;
   private @Valid String canalEnvioCelularYCorreo;
   private @Valid String productoSolicitado;
-  private @Valid String codigoNovedadListas;
+  private @Valid Object codigoNovedadListas;
 
   /**
    **/
@@ -701,37 +701,37 @@ public class ClienteCDTDigitalType   {
 
   /**
    **/
-  public ClienteCDTDigitalType ingresosMensuales(Float ingresosMensuales) {
+  public ClienteCDTDigitalType ingresosMensuales(Integer ingresosMensuales) {
     this.ingresosMensuales = ingresosMensuales;
     return this;
   }
 
   
   @JsonProperty("ingresosMensuales")
-  public Float getIngresosMensuales() {
+  public Integer getIngresosMensuales() {
     return ingresosMensuales;
   }
 
   @JsonProperty("ingresosMensuales")
-  public void setIngresosMensuales(Float ingresosMensuales) {
+  public void setIngresosMensuales(Integer ingresosMensuales) {
     this.ingresosMensuales = ingresosMensuales;
   }
 
   /**
    **/
-  public ClienteCDTDigitalType patrimonio(Float patrimonio) {
+  public ClienteCDTDigitalType patrimonio(Integer patrimonio) {
     this.patrimonio = patrimonio;
     return this;
   }
 
   
   @JsonProperty("patrimonio")
-  public Float getPatrimonio() {
+  public Integer getPatrimonio() {
     return patrimonio;
   }
 
   @JsonProperty("patrimonio")
-  public void setPatrimonio(Float patrimonio) {
+  public void setPatrimonio(Integer patrimonio) {
     this.patrimonio = patrimonio;
   }
 
@@ -1295,19 +1295,19 @@ public class ClienteCDTDigitalType   {
 
   /**
    **/
-  public ClienteCDTDigitalType codigoNovedadListas(String codigoNovedadListas) {
+  public ClienteCDTDigitalType codigoNovedadListas(Object codigoNovedadListas) {
     this.codigoNovedadListas = codigoNovedadListas;
     return this;
   }
 
   
   @JsonProperty("codigoNovedadListas")
-  public String getCodigoNovedadListas() {
+  public Object getCodigoNovedadListas() {
     return codigoNovedadListas;
   }
 
   @JsonProperty("codigoNovedadListas")
-  public void setCodigoNovedadListas(String codigoNovedadListas) {
+  public void setCodigoNovedadListas(Object codigoNovedadListas) {
     this.codigoNovedadListas = codigoNovedadListas;
   }
 
