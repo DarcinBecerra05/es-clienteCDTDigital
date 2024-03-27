@@ -14,8 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @GraphQLApi
-public class ClienteCDTDigidalController implements V1ClientecdtdigitalApi {
-    private static final Logger LOG = LoggerFactory.getLogger(ClienteCDTDigidalController.class);
+public class ClienteCDTDigitalController implements V1ClientecdtdigitalApi {
+    private static final Logger LOG = LoggerFactory.getLogger(ClienteCDTDigitalController.class);
 
     @Inject
     ClienteCDTDigidalImpl clienteCDTDigitalImpl;

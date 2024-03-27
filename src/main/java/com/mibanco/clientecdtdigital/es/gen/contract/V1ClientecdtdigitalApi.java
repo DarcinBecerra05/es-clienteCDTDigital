@@ -17,7 +17,7 @@ import jakarta.validation.Valid;
 
 
 @Path("/v1/es")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-26T13:40:07.910799900-05:00[America/Bogota]", comments = "Generator version: 7.4.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-26T14:17:41.002268600-05:00[America/Bogota]", comments = "Generator version: 7.4.0")
 public interface V1ClientecdtdigitalApi {
 
     @PUT
